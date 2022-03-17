@@ -15,6 +15,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import AppsIcon from "@mui/icons-material/Apps";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -28,7 +29,7 @@ const Search = styled("div")(({ theme }) => ({
   width: "100%",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
-    width: "auto",
+    width: "50%",
   },
 }));
 
@@ -122,10 +123,10 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <SettingsIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Setting</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -156,7 +157,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar >
         <Toolbar justifyContent="center">
           <IconButton
             size="large"
@@ -171,19 +172,22 @@ export default function PrimarySearchAppBar() {
             variant="h6"
             noWrap
             component="div"
+            width="100px"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            To Do{" "}
+            To Do
           </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
+          <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
+          </div>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
@@ -191,9 +195,7 @@ export default function PrimarySearchAppBar() {
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
+                <SettingsIcon />
             </IconButton>
             <IconButton
               size="large"

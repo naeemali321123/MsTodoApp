@@ -1,21 +1,21 @@
 import "./App.css";
 import Navbar from "./myComponents/navbar/Navbar";
 import LeftBar from "./myComponents/leftBar/LeftBar";
-import Button1 from "./myComponents/button/Button";
-import { classes } from "./MyStyle";
-import { Grid } from "@material-ui/core";
+import {  Grid  } from "@material-ui/core";
+import Button from "./myComponents/button/Button";
 
 function App() {
   return (
     <>
-      <Button1 />
-      <h1 style={classes.button}>Paragraph</h1>
-
-      <Navbar />
-
-      <Grid container>
-        <Grid>
+      <Grid container direction="row">
+        <Grid item xs={12}>
+          <Navbar />
+        </Grid>
+        <Grid item>
           <LeftBar />
+        </Grid>
+        <Grid item xs={4}>
+          <Button />
         </Grid>
       </Grid>
     </>

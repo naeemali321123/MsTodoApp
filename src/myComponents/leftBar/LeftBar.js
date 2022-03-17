@@ -1,4 +1,4 @@
-import { Container, Typography } from "@material-ui/core";
+import { Box, Container, Typography } from "@material-ui/core";
 import MenuIcon from "@mui/icons-material/Menu";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -8,14 +8,18 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { useStyles } from "./LeftBarStyle";
 
+
 const Leftbar = () => {
   const classes = useStyles();
   return (
-    
+
     <Container className={classes.container}>
       <div className={classes.item}>
         <MenuIcon className={classes.icon} />
-        <Typography>Home Minister</Typography>
+      </div>
+
+      <div className={classes.item}>
+        <MenuIcon className={classes.icon} />
       </div>
       <div className={classes.item}>
         <LightModeOutlinedIcon className={classes.icon} />
@@ -43,7 +47,7 @@ const Leftbar = () => {
         <Typography className={classes.text}>New List</Typography>
       </div>
     </Container>
-   
+
   );
 };
 
