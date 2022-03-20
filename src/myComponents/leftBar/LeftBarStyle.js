@@ -4,11 +4,8 @@ import { makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) => ({
   container: {
     height: "100vh",
-    width: '300px',
+    display: 'sticky',
     color: "black",
-    padding: theme.spacing(3),
-
-
     [theme.breakpoints.up("sm")]: {
       backgroundColor: "#edebe9",
       color: "#555",
@@ -16,10 +13,12 @@ export const useStyles = makeStyles((theme) => ({
   },
   item: {
     display: "flex",
-    alignItems: "left",
+    justifyContent: 'left',
+ 
     marginBottom: theme.spacing(4),
     [theme.breakpoints.up("sm")]: {
-      marginBottom: theme.spacing(3),
+      margin: theme.spacing(),
+      marginLeft: theme.spacing(1),
       cursor: "pointer",
     },
   },
@@ -35,5 +34,24 @@ export const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  leftbarbottom:{
+    display: 'flex',
+    height: '100vh',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  },
+  padding:{
+    display: "flex",
+    justifyContent: 'left',
+    paddingTop:'80px',
+ 
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.up("sm")]: {
+      margin: theme.spacing(),
+      marginLeft: theme.spacing(1),
+      cursor: "pointer",
+    },
+  },
+  
 
 }));

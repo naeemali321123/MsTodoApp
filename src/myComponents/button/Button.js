@@ -1,37 +1,29 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import { makeStyles } from "@mui/styles";
+import Button from "@mui/material/Button";
 
-const buttons = [
-  <Button key="one">One</Button>,
-  <Button key="two">Two</Button>,
-  <Button key="three">Three</Button>,
-  <Button key="three">Three</Button>,
-  <Button key="three">Three</Button>,
-  <Button key="three">Three</Button>,
-  <Button key="three">Three</Button>,
+const useStyles = makeStyles({
+  root: {
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    color: "white",
+    height: 48,
+    padding: "0 30px",
+  },
+  alignment:{
+    textAlign: 'center'
+  }
+});
 
-];
-
-export default function GroupOrientation() {
+export default function Hook() {
+  const classes = useStyles();
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        '& > *': {
-          m: 0,
-          mt: 10,
-          width: '300px',
-
-        },
-      }}
-    >
-      <ButtonGroup
-        orientation="vertical"
-      >
-        {buttons}
-      </ButtonGroup>
-    </Box>
+    <>
+      <div className={classes.alignment}>
+        <Button className={classes.root}>Styled with Hook API</Button>
+      </div>
+    </>
   );
 }

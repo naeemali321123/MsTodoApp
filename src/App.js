@@ -1,22 +1,27 @@
 import "./App.css";
 import Navbar from "./myComponents/navbar/Navbar";
 import LeftBar from "./myComponents/leftBar/LeftBar";
-import {  Grid  } from "@material-ui/core";
-import Button from "./myComponents/button/Button";
+import { Box, Grid, Button, Radio, Hidden } from "@material-ui/core";
+import { useState } from "react";
 
 function App() {
-  return (
+   return (
     <>
       <Grid container direction="row">
         <Grid item xs={12}>
           <Navbar />
         </Grid>
-        <Grid item>
+        <Grid item xs={2}>
           <LeftBar />
         </Grid>
-        <Grid item xs={4}>
-          <Button />
+        <Grid  item xs={8}>
+          <Box>
+            
+          </Box>
         </Grid>
+        <Grid  item xs={2}>
+        </Grid>
+        
       </Grid>
     </>
   );
