@@ -1,4 +1,4 @@
-export const useStyle = {
+export const classes = {
   heading: {
     padding: "15px",
     backgroundColor: "purple",
