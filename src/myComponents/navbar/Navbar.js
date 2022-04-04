@@ -11,10 +11,12 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import AppsIcon from "@mui/icons-material/Apps";
 import SettingsIcon from '@mui/icons-material/Settings';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -28,7 +30,7 @@ const Search = styled("div")(({ theme }) => ({
   width: "100%",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
-    width: "50%",
+    width: "auto",
   },
 }));
 
@@ -49,8 +51,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
-    width: "50%",
-    [theme.breakpoints.up("md")]: {
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
       width: "50ch",
     },
   },
@@ -122,10 +124,10 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <SettingsIcon />
+            <MailIcon />
           </Badge>
         </IconButton>
-        <p>Setting</p>
+        <p>Messages</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -155,9 +157,9 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box >
-      <AppBar dispaly="sticky">
-        <Toolbar justifyContent="center">
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
           <IconButton
             size="large"
             edge="start"
@@ -171,22 +173,21 @@ export default function PrimarySearchAppBar() {
             variant="h6"
             noWrap
             component="div"
-            width="100px"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { xs: "none", md: "block" } }}
           >
             To Do
           </Typography>
-          <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          </div>
+          <Box style={{ display: "flex", justifyContent: "center", width: '75%'}}>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
@@ -194,14 +195,25 @@ export default function PrimarySearchAppBar() {
               aria-label="show 4 new mails"
               color="inherit"
             >
+              <Badge badgeContent={4} color="error">
                 <SettingsIcon />
+              </Badge>
             </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge color="error">
+                <QuestionMarkIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              size="large"
+              aria-label="show 17 new notifications"
+              color="inherit"
+            >
+              <Badge color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>

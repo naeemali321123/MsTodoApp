@@ -1,91 +1,85 @@
-import {
-  Button,
-  ButtonGroup,
-  Container,
-  Input,
-  Typography,
-} from "@material-ui/core";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
-import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import AssignmentIndRoundedIcon from "@mui/icons-material/AssignmentIndRounded";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import AttachFileIcon from "@mui/icons-material/AttachFile";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
-import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
+import { FormControl, OutlinedInput } from "@mui/material";
 
-import { useStyles } from "./LeftBarStyle";
-
-const Leftbar = () => {
-  const classes = useStyles();
+export default function LeftBar() {
   return (
-    <>
-      <ButtonGroup orientation="vertical" className={classes.container}>
-        <Button variant="contained" className={classes.padding}>
-          <MenuIcon className={classes.icon} />
-        </Button>
-
-        <Button variant="contained" className={classes.item}>
-          <LightModeOutlinedIcon className={classes.icon} />
-          <Typography className={classes.text}>My Day</Typography>
-        </Button>
-
-        <Button variant="contained" className={classes.item}>
-          <StarBorderOutlinedIcon className={classes.icon} />
-          <Typography className={classes.text}>Important</Typography>
-        </Button>
-        <Button variant="contained" className={classes.item}>
-          <CalendarMonthOutlinedIcon className={classes.icon} />
-          <Typography className={classes.text}>Planned</Typography>
-        </Button>
-        <Button variant="contained" className={classes.item}>
-          <AssignmentIndRoundedIcon className={classes.icon} />
-          <Typography className={classes.text}>Assigned to me</Typography>
-        </Button>
-        <Button variant="contained" className={classes.item}>
-          <HomeOutlinedIcon className={classes.icon} />
-          <Typography className={classes.text}>Task</Typography>
-        </Button>
-        <Button variant="contained" className={classes.item}>
-          <AddOutlinedIcon className={classes.icon} />
-          <Input
-            className={classes.text}
-            color="primary"
-            placeholder="New Task"
-          />
-          <div variant="contained" style={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button>
-              <CreateNewFolderOutlinedIcon />
-            </Button>
-          </div>
-        </Button>
-
-        <div className={classes.leftbarbottom}>
-          <ButtonGroup>
-            <Button variant="outlined">
-              <MailOutlineIcon />
-            </Button>
-            <Button variant="outlined">
-              <CalendarMonthOutlinedIcon />
-            </Button>
-            <Button variant="outlined">
-              <PeopleAltOutlinedIcon />
-            </Button>
-            <Button variant="outlined">
-              <AttachFileIcon />
-            </Button>
-            <Button variant="outlined">
-              <CheckOutlinedIcon />
-            </Button>
-          </ButtonGroup>
-        </div>
-      </ButtonGroup>
-    </>
+    <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+      <nav aria-label="main mailbox folders">
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <MenuIcon />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <LightModeOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="My Day" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <GradeOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Important" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <CalendarMonthOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Planned" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <PersonOutlineOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Assigned to me" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <HomeOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Tasks" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <AddOutlinedIcon />
+              </ListItemIcon>
+              <FormControl sx={{ width: "25ch" }}>
+                <OutlinedInput placeholder="New list" />
+              </FormControl>
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </nav>
+      <Divider />
+    </Box>
   );
-};
-
-export default Leftbar;
+}

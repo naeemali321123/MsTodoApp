@@ -1,12 +1,12 @@
 import "./App.css";
-import CounterApp from "./myComponents/counterApp/CounterApp";
-import StudentData from "./myComponents/studentData/StudentData";
+import LeftBar from "./myComponents/leftBar/LeftBar";
+import Navbar from './myComponents/navbar/Navbar'
 
 function App() {
    return (
     <>
-     <CounterApp />
-     <StudentData />
+    <Navbar/>
+    <LeftBar/>
     </>
   );
 }
