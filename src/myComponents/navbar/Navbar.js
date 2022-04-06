@@ -15,8 +15,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import AppsIcon from "@mui/icons-material/Apps";
-import SettingsIcon from '@mui/icons-material/Settings';
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import SettingsIcon from "@mui/icons-material/Settings";
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import { Link } from "@material-ui/core";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -161,7 +162,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            size="large"
+            size="small"
             edge="start"
             color="inherit"
             aria-label="open drawer"
@@ -175,9 +176,11 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", md: "block" } }}
           >
-            To Do
+              To Do
           </Typography>
-          <Box style={{ display: "flex", justifyContent: "center", width: '75%'}}>
+          <Box
+            style={{ display: "flex", justifyContent: "center", width: "75%" }}
+          >
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />
