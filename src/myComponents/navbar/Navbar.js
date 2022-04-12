@@ -17,16 +17,15 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import AppsIcon from "@mui/icons-material/Apps";
 import SettingsIcon from "@mui/icons-material/Settings";
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
-import { Link } from "@material-ui/core";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.white, .60),
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.white, 0.90),
   },
-  marginRight: theme.spacing(2),
+  marginRight: theme.spacing(1),
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
@@ -158,7 +157,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 , height: '70px'}}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -232,7 +231,7 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" }}}>
             <IconButton
               size="large"
               aria-label="show more"

@@ -14,7 +14,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { Button, FormControl } from "@mui/material";
 import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
-import { Input } from "@material-ui/core";
+import { Badge, Input } from "@material-ui/core";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
 import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
@@ -22,8 +22,19 @@ import DoneOutlineOutlinedIcon from "@mui/icons-material/DoneOutlineOutlined";
 
 export default function LeftBar() {
   return (
-    <Box sx={{ height:'100vh', display:'static', width: "100%", maxWidth: 360, bgcolor: "#EDEBE9" }}>
-      <nav aria-label="main mailbox folders" >
+    <Box
+      sx={{
+        height: `calc(100vh - 70px)`,
+        display: "static",
+        width: "100%",
+        maxWidth: 360,
+        bgcolor: "#EDEBE9",
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "column",
+      }}
+    >
+      <nav aria-label="main mailbox folders">
         <List>
           <ListItem disablePadding>
             <ListItemButton>
@@ -38,6 +49,7 @@ export default function LeftBar() {
                 <LightModeOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="My Day" />
+                <Badge>{4}</Badge>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -46,6 +58,7 @@ export default function LeftBar() {
                 <GradeOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Important" />
+              <Badge>{4}</Badge>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -54,6 +67,7 @@ export default function LeftBar() {
                 <CalendarMonthOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Planned" />
+              <Badge>{4}</Badge>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -62,6 +76,7 @@ export default function LeftBar() {
                 <PersonOutlineOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Assigned to me" />
+              <Badge>{4}</Badge>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -70,6 +85,7 @@ export default function LeftBar() {
                 <HomeOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Tasks" />
+              <Badge>{4}</Badge>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -90,28 +106,24 @@ export default function LeftBar() {
             </ListItem>
           </ListItem>
         </List>
-        <Box sx={{
-          display: 'flex',
-          alignItems:'flex-end',
-          height: '10vh'
-         }} >
-            <Button>
-              <MailOutlineIcon />
-            </Button>
-            <Button size="small">
-              <CalendarMonthOutlinedIcon />
-            </Button>
-            <Button size="small">
-              <PeopleOutlineOutlinedIcon />
-            </Button>
-            <Button size="small">
-              <AttachFileOutlinedIcon />
-            </Button>
-            <Button size="small">
-              <DoneOutlineOutlinedIcon />
-            </Button>
-        </Box>
       </nav>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Button>
+          <MailOutlineIcon />
+        </Button>
+        <Button size="small">
+          <CalendarMonthOutlinedIcon />
+        </Button>
+        <Button size="small">
+          <PeopleOutlineOutlinedIcon />
+        </Button>
+        <Button size="small">
+          <AttachFileOutlinedIcon />
+        </Button>
+        <Button size="small">
+          <DoneOutlineOutlinedIcon />
+        </Button>
+      </Box>
     </Box>
   );
 }
