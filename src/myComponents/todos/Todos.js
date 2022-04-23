@@ -9,6 +9,11 @@ import {
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
+import Todo from "../todo/Todo";
+import MenuIcon from "@mui/icons-material/Menu";
+
+
+
 
 export default function Todos() {
   let todosListTest = "My Day";
@@ -16,9 +21,15 @@ export default function Todos() {
     <>
       <Box>
         <List>
-          <ListItem disablePadding sx={{display:'flex', justifyContent:'space-between'}}>
-            <Box sx={{display:'flex'}}>
-              <Typography>{todosListTest}</Typography>
+          <ListItem
+            disablePadding
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <Box sx={{ display: "flex" }}>
+              <Button size="small">
+                <MenuIcon sx={{ paddingRight: "5px" }} />
+              </Button>
+              <Typography fontSize={25}>{todosListTest}</Typography>
               <Button size="small">
                 <MoreHorizIcon sx={{ paddingRight: "5px" }} />
               </Button>
@@ -37,6 +48,7 @@ export default function Todos() {
           </ListItem>
         </List>
       </Box>
+      <Todo />
     </>
   );
 }
