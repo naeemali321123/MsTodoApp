@@ -12,7 +12,7 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import { Button, FormControl, Hidden } from "@mui/material";
+import { Button, FormControl } from "@mui/material";
 import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
 import { Badge, Input } from "@material-ui/core";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -22,7 +22,6 @@ import DoneOutlineOutlinedIcon from "@mui/icons-material/DoneOutlineOutlined";
 
 export default function LeftBar() {
   return (
-    <Hidden mdDown>
     <Box
       sx={{
         
@@ -126,6 +125,5 @@ export default function LeftBar() {
         </Button>
       </Box>
     </Box>
-    </Hidden>
   );
 }

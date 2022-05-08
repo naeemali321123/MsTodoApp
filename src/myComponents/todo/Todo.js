@@ -1,16 +1,37 @@
-import { Box, ButtonBase, IconButton, Input, Radio } from "@mui/material";
+import {
+  Box,
+  ButtonBase,
+  Button,
+  IconButton,
+  Input,
+} from "@mui/material";
 
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import EventRepeatOutlinedIcon from "@mui/icons-material/EventRepeatOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-
+import AddIcon from "@mui/icons-material/Add";
 export default function Todo() {
   return (
     <div>
-      <Box sx={{ backgroundColor: "#EDEBE9", borderRadius: "5px" }}>
+      <Box sx={{ backgroundColor: "#EDEBE9", borderRadius: "5px", mx: "10px" }}>
         <Box sx={{ display: "flex" }}>
-          <Radio />
-          <Input sx={{ width: "100%" }} />
+          <Button size="large">
+            <AddIcon />
+          </Button>
+          <Input disableUnderline
+            sx={{
+              width: '95%',
+              margin: '10px'
+            }}
+            placeholder="Add a Task"
+            inputProps={{
+              sx: {
+                "&::placeholder": {
+                  color: "blue",
+                },
+              },
+            }}
+          />
         </Box>
         <Box
           sx={{
