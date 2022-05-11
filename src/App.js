@@ -4,6 +4,7 @@ import LeftBar from "./myComponents/leftBar/LeftBar";
 import RightBar from "./myComponents/rightBar/RightBar";
 import Navbar from "./myComponents/navbar/Navbar";
 import Todos from "./myComponents/todos/Todos";
+import CounterApp from './myComponents/counterApp/CounterApp'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         </Grid>
         <Grid item md={6.30}>
           <Todos />
+          <CounterApp/>
         </Grid>
         <Grid item xs={2.85}>
           <Hidden >
