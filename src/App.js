@@ -20,6 +20,7 @@ function App() {
         </Grid>
         <Grid item md={6.30}>
           <Todos />
+          <Todos />
         </Grid>
         <Grid item xs={2.85}>
           <Hidden >
