@@ -20,7 +20,6 @@ function App() {
         </Grid>
         <Grid item md={6.30}>
           <Todos />
-          <CounterApp/>
         </Grid>
         <Grid item xs={2.85}>
           <Hidden >
